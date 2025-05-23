@@ -133,11 +133,11 @@ node -e "console.log(require('crypto').randomBytes(32).toString('base64'))"
 | `API_TOKEN_SALT` | Used to generate API tokens | ✅ |
 | `ADMIN_JWT_SECRET` | Used to authenticate admin users | ✅ |
 | `TRANSFER_TOKEN_SALT` | Used for data transfer tokens | ✅ |
-| `SMTP_USERNAME` | SMTP username for sending emails | ❌ |
-| `SMTP_PASSWORD` | SMTP password | ❌ |
-| `SMTP_HOST` | SMTP host | ❌ |
-| `SMTP_PORT` | SMTP port | ❌ |
-| `APPLE_SHARED_SECRET` | Secret key for Apple IAP validation | ❌ |
+| `SMTP_USERNAME` | SMTP username for sending emails | ✅ |
+| `SMTP_PASSWORD` | SMTP password | ✅ |
+| `SMTP_HOST` | SMTP host | ✅ |
+| `SMTP_PORT` | SMTP port | ✅ |
+| `APPLE_SHARED_SECRET` | Secret key for Apple IAP validation | ✅ |
 
 
 ## 📚 Documentation
