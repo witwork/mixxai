@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./banner/mixxai.png" alt="MixxAI - Advanced AI Conversation Platform" width="100%"/>
+  <img src="./banner/mixxai.png" alt="MixxAI - Advanced AI Conversation Platform built on Strapi CMS" width="100%"/>
   <h1>MixxAI - Advanced AI Conversation Platform</h1>
   <p>🤖 Powerful | ⚡ Fast | 🔒 Secure | 🌐 Scalable</p>
   
@@ -16,12 +16,15 @@
     <a href="https://witworkapp.com">
       <img src="https://img.shields.io/badge/Website-WitWork-blue?style=for-the-badge" alt="Website" />
     </a>
+    <a href="https://strapi.io">
+      <img src="https://img.shields.io/badge/Powered%20by-Strapi-8e75ff?style=for-the-badge&logo=strapi&logoColor=white" alt="Powered by Strapi" />
+    </a>
   </p>
 </div>
 
 ## 📋 Overview
 
-**MixxAI** is a complete AI conversation platform that lets you seamlessly integrate powerful chatbot capabilities into your applications. Built with performance, security, and scalability in mind, MixxAI helps businesses deliver exceptional conversational experiences.
+**MixxAI** is a complete AI conversation platform built on [Strapi CMS](https://strapi.io) that lets you seamlessly integrate powerful chatbot capabilities into your applications. Built with performance, security, and scalability in mind, MixxAI helps businesses deliver exceptional conversational experiences through a customized headless CMS approach.
 
 ### Key Features
 
@@ -31,13 +34,14 @@
 - ✅ **Conversation History** - Store and analyze all interactions
 - ✅ **Enterprise Security** - Data encryption and privacy controls
 - ✅ **Easy Deployment** - One-click installation via Docker
+- ✅ **Strapi-Powered** - Built on the leading open-source headless CMS
 
 ## 🚀 Quick Installation
 
 Get your MixxAI server running with our automated installation script:
 
 ```bash
-wget -O mixxai.sh https://raw.githubusercontent.com/witworkapp/mixxai/main/mixxai.sh && sudo bash mixxai.sh
+wget -O mixxai.sh https://raw.githubusercontent.com/witwork/mixxai/main/mixxai.sh && sudo bash mixxai.sh
 ```
 
 ### System Requirements
@@ -72,7 +76,69 @@ yarn build
 yarn start
 ```
 
-For detailed instructions, see [DETAILED-INSTALLATION.md](DETAILED-INSTALLATION.md).
+### Environment Configuration
+
+MixxAI requires proper environment variables configuration for optimal operation. Create a `.env` file in your project directory with the following structure:
+
+```
+# Database Configuration
+DATABASE_CLIENT=postgres
+DATABASE_NAME=mixxai_db
+DATABASE_USERNAME=your_database_user
+DATABASE_PASSWORD=strong_password_here
+
+# Server Configuration
+HOST=0.0.0.0
+PORT=1337
+
+# Security Keys (Generate random secure strings)
+APP_KEYS=key1,key2,key3,key4
+API_TOKEN_SALT=random_string_here
+ADMIN_JWT_SECRET=random_string_here
+TRANSFER_TOKEN_SALT=random_string_here
+
+# Email Configuration (Optional)
+SMTP_USERNAME=your_smtp_username
+SMTP_PASSWORD=your_smtp_password
+SMTP_HOST=smtp.provider.com
+SMTP_PORT=587
+
+# Apple Subscription (Optional)
+APPLE_SHARED_SECRET=your_apple_shared_secret
+```
+
+#### Generating Secure Keys
+
+For security, generate random strings for your keys:
+
+```bash
+# On Linux/macOS
+openssl rand -base64 32
+
+# Using Node.js
+node -e "console.log(require('crypto').randomBytes(32).toString('base64'))"
+```
+
+#### Environment Variables Reference
+
+| Variable | Description | Required |
+|----------|-------------|:--------:|
+| `DATABASE_CLIENT` | Database type (postgres) | ✅ |
+| `DATABASE_NAME` | Database name | ✅ |
+| `DATABASE_USERNAME` | Database user | ✅ |
+| `DATABASE_PASSWORD` | Database password | ✅ |
+| `HOST` | Host to bind the server | ✅ |
+| `PORT` | Port to bind the server | ✅ |
+| `APP_KEYS` | Used to encrypt cookies | ✅ |
+| `API_TOKEN_SALT` | Used to generate API tokens | ✅ |
+| `ADMIN_JWT_SECRET` | Used to authenticate admin users | ✅ |
+| `TRANSFER_TOKEN_SALT` | Used for data transfer tokens | ✅ |
+| `SMTP_USERNAME` | SMTP username for sending emails | ❌ |
+| `SMTP_PASSWORD` | SMTP password | ❌ |
+| `SMTP_HOST` | SMTP host | ❌ |
+| `SMTP_PORT` | SMTP port | ❌ |
+| `APPLE_SHARED_SECRET` | Secret key for Apple IAP validation | ❌ |
+
 
 ## 📚 Documentation
 
@@ -80,6 +146,7 @@ For detailed instructions, see [DETAILED-INSTALLATION.md](DETAILED-INSTALLATION.
 - [Configuration Guide](https://docs.witworkapp.com/mixxai/config)
 - [Integration Examples](https://docs.witworkapp.com/mixxai/examples)
 - [Security Best Practices](https://docs.witworkapp.com/mixxai/security)
+- [Strapi Documentation](https://docs.strapi.io)
 
 ## 🏢 About WitWork
 
@@ -170,7 +237,7 @@ WitWork specializes in creating AI-powered solutions and mobile applications tha
   
   <h3>👩‍💻 Developer Platforms</h3>
   <p>
-    <a href="https://github.com/witworkapp">
+    <a href="https://github.com/witwork">
       <img src="https://img.shields.io/badge/GitHub-witworkapp-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
     </a>
     <a href="https://dribbble.com/WitWorkApp">
@@ -189,9 +256,23 @@ WitWork specializes in creating AI-powered solutions and mobile applications tha
   </p>
 </div>
 
+## 🔧 System Architecture
+
+MixxAI extends Strapi's content management capabilities with custom AI conversation features including:
+
+- AI model integrations (OpenAI GPT, Google Gemini)
+- Enhanced user management and authentication
+- Subscription handling with Apple In-App Purchase support
+- Real-time conversation processing and analysis
+- Data security and privacy controls
+
 ## 📄 License
 
 MixxAI is available under the MIT License. See the [LICENSE](LICENSE) file for more information.
+
+## 🙏 Acknowledgments
+
+MixxAI is built on [Strapi](https://strapi.io), the leading open-source headless CMS. We acknowledge and thank the Strapi team for their excellent work.
 
 ---
 
