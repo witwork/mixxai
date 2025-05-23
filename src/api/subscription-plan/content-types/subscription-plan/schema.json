@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "subscription_plans",
+  "info": {
+    "singularName": "subscription-plan",
+    "pluralName": "subscription-plans",
+    "displayName": "Subscription Plan",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "bundleId": {
+      "type": "uid"
+    },
+    "platform": {
+      "type": "enumeration",
+      "enum": [
+        "android",
+        "ios"
+      ],
+      "default": "android"
+    }
+  }
+}

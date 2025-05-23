@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ai_models",
+  "info": {
+    "singularName": "ai-model",
+    "pluralName": "ai-models",
+    "displayName": "AI Model",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "short_description": {
+      "type": "string"
+    },
+    "is_premium": {
+      "type": "boolean",
+      "default": false
+    },
+    "api_key": {
+      "type": "string",
+      "private": true
+    },
+    "model_name": {
+      "type": "uid"
+    },
+    "conversations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::conversation.conversation",
+      "mappedBy": "ai_model"
+    },
+    "llm": {
+      "type": "enumeration",
+      "enum": [
+        "openai",
+        "gemini"
+      ],
+      "default": "openai"
+    }
+  }
+}

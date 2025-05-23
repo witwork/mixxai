@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "report_messages",
+  "info": {
+    "singularName": "report-message",
+    "pluralName": "report-messages",
+    "displayName": "Report Message",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "reason": {
+      "type": "enumeration",
+      "enum": [
+        "Rude or abusive behavior",
+        "Inappropriate content",
+        "Underage",
+        "I'm just not interested",
+        "Other"
+      ]
+    },
+    "chat_messages": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::chat-message.chat-message",
+      "mappedBy": "report_message"
+    }
+  }
+}

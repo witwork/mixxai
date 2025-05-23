@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "subscriptions",
+  "info": {
+    "singularName": "subscription",
+    "pluralName": "subscriptions",
+    "displayName": "Subscription",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "platform": {
+      "type": "string"
+    },
+    "purchaseDate": {
+      "type": "datetime"
+    },
+    "nextPurchaseDate": {
+      "type": "datetime"
+    },
+    "receipt": {
+      "type": "text"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "subscriptions"
+    },
+    "subscriptionId": {
+      "type": "string",
+      "unique": true
+    }
+  }
+}

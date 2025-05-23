@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "conversations",
+  "info": {
+    "singularName": "conversation",
+    "pluralName": "conversations",
+    "displayName": "Conversation",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "conversations"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": false
+    },
+    "chat_messages": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::chat-message.chat-message",
+      "mappedBy": "conversation"
+    },
+    "ai_model": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::ai-model.ai-model",
+      "inversedBy": "conversations"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "name": "strapi-2fa",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A Strapi application",
+  "scripts": {
+    "build": "node --max-old-space-size=1024 node_modules/.bin/strapi build",
+    "deploy": "strapi deploy",
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "strapi": "strapi"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.22.0",
+    "@strapi/plugin-cloud": "5.1.0",
+    "@strapi/plugin-users-permissions": "5.1.0",
+    "@strapi/provider-email-nodemailer": "^5.1.0",
+    "@strapi/strapi": "5.1.0",
+    "better-sqlite3": "11.3.0",
+    "date-fns": "^4.1.0",
+    "openai": "^4.91.0",
+    "pg": "^8.13.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.0.0",
+    "styled-components": "^6.0.0",
+    "time2fa": "^1.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=18.0.0 <=22.x.x",
+    "npm": ">=6.0.0"
+  },
+  "strapi": {
+    "uuid": "a34bc4a4-05ef-4b07-a107-98777f23b2c8"
+  }
+}
